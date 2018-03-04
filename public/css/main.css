@@ -1,0 +1,260 @@
+@media only screen and (orientation: portrait) {
+.test {
+width: 100vw;
+height: 60vh;
+top: 16vh;}
+
+.test-img {
+max-height: 100%;
+max-width: 100vw;}
+
+.slick-slide {
+margin: 0 1vw;}
+
+.contact-row{
+/*  border: solid;*/
+  padding-top: 5vw;
+  padding-left: 5vw;
+  padding-right: 15vw;}
+
+.contact-row:after {
+    content: "";
+    display: table;
+    clear: both;}
+
+.error{
+  width: 50%;
+  background-color: red;
+  color: white;}
+
+ @media only screen and (max-width: 600px){
+.contact-row{
+/*  border: solid;*/
+  padding-top: 3vh;
+  padding-left: 5vw;
+  padding-right: 5vw;}
+
+.contact-row:after {
+    content: "";
+    display: table;
+    clear: both;}
+
+.error{
+  width: 50%;
+  background-color: red;
+  color: white;}
+}
+}
+
+
+
+@media only screen and (orientation: landscape) {
+.test {
+height: 60vh;
+width: 99vw;
+top: 15vh;}
+
+.test-img {height: 100%;}
+.slick-slide {
+margin: 0 0.4vw;}
+
+.contact-row{
+/*  border: solid;*/
+  padding-top: 3vh;
+  padding-left: 20vw;
+  padding-right: 20vw;}
+
+.contact-row:after {
+    content: "";
+    display: table;
+    clear: both;}
+
+.error{
+  width: 40%;
+  background-color: red;
+  color: white;}
+}
+
+body{
+  margin: 0px;
+}
+
+a {
+    color: black;
+}
+img.spinner {
+background: url("../gif/spinner.gif") no-repeat center transparent;
+background-size: 2vh;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+overflow: hidden;}
+
+.column{
+  float:left;
+}
+.column-25 {
+width: 15%;
+text-align: right;
+padding: 7px 14px;}
+
+.column-75 {
+width: 75%;
+}
+
+/* Clear floats after the columns */
+.row{
+/*  border: solid;*/
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.logo{
+
+}
+/* Style the links inside the navigation bar */
+.topnav{
+padding-left: 40vw;
+background-color: white;
+
+}
+
+.topnav a {
+float: left;
+display: block;
+color: black;
+text-align: center;
+padding: 14px 14px;
+text-decoration: none;
+font-size: 14px;
+/*  border: solid;*/}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+background-color: lightblue;
+color: black;}
+
+/* Add an active class to highlight the current page */
+.active {
+background-color: lightblue;
+color: white;}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+display: none;}
+
+
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .topnav a {display: none;}
+  .topnav a.icon {
+float: right;
+display: block;}
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+.topnav.responsive {position: relative;}
+.topnav.responsive a.icon {
+position: absolute;
+right: 0;
+top: 0;
+width: 7px;
+height: 14px;}
+
+.topnav.responsive a {
+float: none;
+display: block;
+text-align: center;}
+}
+
+.slick-slide{
+  outline: none !important;
+}
+
+/*footer*/
+footer {
+    display: block;
+    position: fixed;
+    bottom: 1vw;
+    right: 1vw;
+    font-size: 1vh;
+}
+
+
+#background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(polina.jpg) no-repeat;
+    background-size: cover;
+}
+
+.container h1 {
+    color: white;
+}
+
+/* contact */
+.contact-column-25 {
+float: left;
+width: 25%;
+text-align: center;
+}
+
+.contact-column-75 {
+float: left;
+width: 75%;
+text-align: center;
+}
+
+
+input{
+    font-size: 16px;
+    font-family: "Arial";
+}
+
+textarea{
+  font-size: 16px;
+  font-family: "Arial";
+}
+
+textarea{
+  width: 100%;
+  text-align: left;
+}
+
+.form-header{
+    font-family: "Arial";
+}
+
+.btn {
+    background-color: lightblue;
+    border: none;
+    color: black;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.btn:hover {
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}

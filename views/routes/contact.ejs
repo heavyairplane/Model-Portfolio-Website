@@ -1,0 +1,61 @@
+<% include ../partials/head %>
+<% include ../partials/topnav %>
+
+<!-- views/contact.ejs -->
+<div class="form-header contact-row">
+    <h2>Contact</h2>
+</div>
+
+<!--<div class="form-header contact-row"> -->
+<!--  <% if (Object.keys(errors).length === 0) { %> -->
+<!--    <h2>Contact</h2> ,-->
+<!--  <% } else { %> -->
+<!--    <h2 class="errors-heading">Please correct the following:</h2> -->
+<!--    <ul class="errors-list" style="list-style: none;"> -->
+<!--      <% Object.values(errors).forEach(error => { %> -->
+<!--        <li><%= error.msg %></li> -->
+<!--      <% }) %> -->
+<!--    </ul> -->
+<!--  <% } %> -->
+</div>
+
+<form method="post" action="/contact" novalidate>
+<input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <div class="contact-row">
+  <div class="form-field  <%= errors.name ? 'form-field-invalid' : '' %>">
+<!--  <label for="name">Name</label> -->
+    <input placeholder="Name" class="input contact-column-25" id="name" name="name"></input>
+    <% if (errors.name) { %>
+      <div class="error contact-column-25"><%= errors.name.msg %></div>
+    <% } %>
+  </div>
+  <div class="form-field <%= errors.email ? 'form-field-invalid' : '' %>">
+<!-- <label for="email">Email</label> -->
+    <input  placeholder="Email" class="input contact-column-75" id="email" name="email" type="email" value="<%= data.email %>" />
+    <% if (errors.email) { %>
+      <div class="error contact-column-75" style="float: right"><%= errors.email.msg %></div>
+    <% } %>
+  </div>
+</div>
+<div class="contact-row">
+    <div class="form-field <%= errors.message ? 'form-field-invalid' : '' %>">
+  <!--  <label for="message">Message</label> -->
+    <textarea  placeholder="Message" class="input" id="message" name="message" rows="8"><%= data.message %></textarea>
+    <% if (errors.message) { %>
+      <div class="error" style="float: right; text-align: center"><%= errors.message.msg %></div>
+    <% } %>
+  </div>
+</div>
+
+<div class="contact-row">
+  <div class="form-actions">
+    <button class="btn" type="submit">Send</button>
+  </div>
+  </div>
+</form>
+
+<% if (messages.success) { %>
+  <div class="flash flash-success"><%= messages.success %></div>
+<% } %>
+
+<% include ../partials/bottom %>
