@@ -1,3 +1,5 @@
+/* glbal remove */
+
 @media only screen and (orientation: portrait) {
 .test {
 width: 100vw;
@@ -6,9 +8,10 @@ top: 16vh;}
 
 .test-img {
 max-height: 100%;
-max-width: 100vw;}
+max-width: 100%;}
 
 .slick-slide {
+height: 60vh;
 margin: 0 1vw;}
 
 .contact-row{
@@ -27,7 +30,7 @@ margin: 0 1vw;}
   background-color: red;
   color: white;}
 
- @media only screen and (max-width: 600px){
+@media only screen and (max-width: 600px){
 .contact-row{
 /*  border: solid;*/
   padding-top: 3vh;
@@ -54,8 +57,12 @@ height: 60vh;
 width: 99vw;
 top: 15vh;}
 
-.test-img {height: 100%;}
+.test-img {height: 100%;
+}
+
+
 .slick-slide {
+height: 60vh;
 margin: 0 0.4vw;}
 
 .contact-row{
