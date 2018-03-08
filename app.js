@@ -26,16 +26,16 @@ const https = require("https"),
 var name = "Sandra Agudosi";
 
 let transporter = nodemailer.createTransport({
-    service: 'gmail',
-    secure: false,
-    port: 25,
+    service: 'Yahoo',
+/*  secure: false,
+    port: 25, */
     auth: {
         user: config.email,
         pass: config.password
-    },
+    } /*,
     tls: {
         rejectUnauthorized: false
-    }
+    } */
 });
 
 
@@ -138,10 +138,10 @@ app.post('/contact', [
  console.log('Sanitized: ', data)
 
  let HelperOptions = {
-     from: '"Joshua Oseh" <joshuaoseh@gmail.com>',
+     from: '"Joshua Oseh" <joshuaoseh@yahoo.com>',
      to: 'joshuaoseh@gmail.com',
      subject: 'Website Contact from ' + data.email,
-     text: data.message + "\n \n From: " + data.name
+     text: data.message + "\n \n From: " + data.email + "\n Name: " + data.name
  };
 
 
