@@ -26,7 +26,7 @@ const https = require("https"),
 var name = "Sandra Agudosi";
 
 let transporter = nodemailer.createTransport({
-    service: 'Yahoo',
+    service: 'gmail',
 /*  secure: false,
     port: 25, */
     auth: {
@@ -69,27 +69,35 @@ app.use(express.static(path.join(__dirname,'public')));
 
 
 
+//disable xpowered
+app.disable('x-powered-by');
+
+
 
 app.get('/', function(req,res){
     res.render('index', {
-      title: name
+      title: name,
+      pageMain: "carousel"
     });
 });
 
 app.get('/portfolio', function(req,res){
     res.render('index', {
-      title: name + ' - Portfolio'
+      title: name + ' - Portfolio',
+      pageMain: "carousel"
     });
 });
 app.get('/about', function(req,res){
     res.render('routes/about', {
-      title: name + ' - About'
+      title: name + ' - About',
+      pageMain: "about"
     });
 });
 
 app.get('/contact', function(req,res,err){
     res.render('routes/contact' , {
       title: name + ' - Contact',
+      pageMain: "contact",
       data: {},
       errors: {},
       csrfToken: req.csrfToken()
@@ -98,7 +106,8 @@ app.get('/contact', function(req,res,err){
 
 app.get('/contact-after', function(req,res){
     res.render('routes/contact-after', {
-      title: name + ' - Thank You'
+      title: name + ' - Thank You',
+      pageMain: "contact"
     });
 });
 
@@ -129,6 +138,7 @@ app.post('/contact', [
     if (!errors.isEmpty()) {
       return res.render('routes/contact', {
         title:  name + ' - Contact',
+        pageMain: "contact",
         data: req.body,
         errors: errors.mapped(),
         csrfToken: req.csrfToken()
@@ -138,7 +148,7 @@ app.post('/contact', [
  console.log('Sanitized: ', data)
 
  let HelperOptions = {
-     from: '"Joshua Oseh" <joshuaoseh@yahoo.com>',
+     from: '"Heavyairplane" <airplaneheavy@gmail.com>',
      to: 'joshuaoseh@gmail.com',
      subject: 'Website Contact from ' + data.email,
      text: data.message + "\n \n From: " + data.email + "\n Name: " + data.name
@@ -162,9 +172,8 @@ app.post('/contact', [
 //error handling go to home
 app.use(function (err, req, res, next) {
   console.error(err.stack);
-  res.status(500).render('index',{
-    title: name + ' - Portfolio'
-  });
+
+res.status(500).send("500error");
 })
 
 /*

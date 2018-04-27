@@ -1,9 +1,10 @@
 {
-  "name": "slick-slider-test",
+  "name": "Sandra_Agudosi_Portfolio",
   "version": "1.0.0",
-  "description": "Practicing",
+  "description": "A Modeling portfolio for the very beautiful Sandra Agudosi",
   "main": "app.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

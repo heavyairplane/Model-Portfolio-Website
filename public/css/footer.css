@@ -1,0 +1,8 @@
+/*footer*/
+footer {
+    display: block;
+    position: fixed;
+    bottom: 1vw;
+    right: 1vw;
+    font-size: 1vh;
+}
