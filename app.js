@@ -111,11 +111,22 @@ app.get('/contact-after', function(req,res){
     });
 });
 
+//test 404 remove after
+app.get('/404', function(req,res){
+    res.render('routes/404', {
+      title: name + ' - error404',
+      pageMain: "error404"
+    });
+});
+
 
 //The 404 Route (ALWAYS Keep this as the last route)
 app.get('*', function(req, res){
        console.log("error 404");
-  res.status(404).send("error");
+  res.status(404).render('routes/404', {
+    title: name + ' - error404',
+    pageMain: "error404"
+  });
 });
 
 app.post('/contact', [

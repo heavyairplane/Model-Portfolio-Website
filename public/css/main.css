@@ -142,12 +142,12 @@ font-size: 14px;
 
 /* Change the color of links on hover */
 .topnav a:hover {
-background-color: lightblue;
+background-color: lightgrey;
 color: black;}
 
 /* Add an active class to highlight the current page */
 .active {
-background-color: lightblue;
+background-color: lightgrey;
 color: white;}
 
 /* Hide the link that should open and close the topnav on small screens */
