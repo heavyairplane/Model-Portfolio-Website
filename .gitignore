@@ -1,7 +1,7 @@
-public
 .env
 procfile
 testing.js
 config.js
 .json
 node_modules
+public/images
